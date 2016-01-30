@@ -42,6 +42,8 @@ In py34 sphinx did not use `pygments` although it was installed.
 	cd sphinx-python3-utf8-demo/doc
 	make html
 
+The output I am currently satisfied with is available in `doc/build/html/index.html`.
+
 Usage of the dummy module
 -------------------------
 
@@ -95,7 +97,7 @@ Bug 2: sphinx uses `re` instead of `regex`
 
 ```
 reading sources... [100%] தமிழ்
-/Work/github/sphinx-python3-utf8-demo/doc/தமிழ்.rst:7: WARNING: invalid signature for automodule ('some_module_with_utf8_code.தமிழ்')
+~/Work/github/sphinx-python3-utf8-demo/doc/தமிழ்.rst:7: WARNING: invalid signature for automodule ('some_module_with_utf8_code.தமிழ்')
 ~/Work/github/sphinx-python3-utf8-demo/doc/தமிழ்.rst:7: WARNING: don't know which module to import for autodocumenting 'some_module_with_utf8_code.தமிழ்' (try placing a "module" or "currentmodule" directive in the document, or giving an explicit module name)
 ```
 
@@ -106,7 +108,7 @@ Proposed fix:
     perl -pi -e 's/^import re$/import regex as re/g'  `find . -name '*.py'`
 
 
-Bug3: `sphinx` should use the built-in Python 3 version of `tokenize.py` instead of relying on a Python 2 version which does not accept utf8 function names
+Bug3: `sphinx` should use the built-in Python 3 version of `tokenize.py` instead of relying on a Python 2 version that does not accept utf8 function names
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 https://github.com/sphinx-doc/sphinx/blob/master/sphinx/pycode/pgen2/tokenize.py
