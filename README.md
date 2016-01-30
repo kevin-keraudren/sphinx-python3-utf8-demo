@@ -1,5 +1,5 @@
-About Python 3, utf8, `sphinx`, `pygments`, `re` and `regex`
-============================================================
+About Python 3, utf8, `sphinx`, `pygments`, `re` and `regex` (and also `tokenize`)
+==================================================================================
 
 Python 3 supports utf8 in identifiers and filenames, hence module names as well.
 This is pretty cool: you can code in your mothertongue, which is great for kids, personal projects, people whose English does not go beyond the built-in Python functions, linguistic projects...
